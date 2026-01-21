@@ -1,0 +1,83 @@
+.vinyl-record {
+  position: relative;
+  width: var(--record-size);
+  height: var(--record-size);
+  border-radius: 50%;
+  background: var(--black);
+  z-index: 1;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset,
+    var(--shadow-lg);
+  transition: transform var(--transition);
+}
+
+.vinyl-record.spinning {
+  animation: spin var(--spin-duration) linear infinite;
+}
+
+.grooves {
+  position: absolute;
+  inset: 14px;
+  border-radius: 50%;
+  background: repeating-radial-gradient(
+    circle at center,
+    var(--gray-800) 0px,
+    var(--gray-800) 0.5px,
+    var(--black) 0.5px,
+    var(--black) 3px
+  );
+  opacity: 0.7;
+}
+
+.grooves::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+}
+
+.center-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--label-size);
+  height: var(--label-size);
+  border-radius: 50%;
+  background: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.06) inset,
+    0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.label-text {
+  color: var(--black);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  text-align: center;
+  max-width: 72px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  opacity: 0.8;
+}
+
+.spindle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: var(--black);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--gray-200);
+}

@@ -1,0 +1,35 @@
+.cabinet {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  border: var(--space-px) solid var(--border-subtle);
+  box-shadow: var(--shadow-md);
+  transition: box-shadow var(--transition-slow);
+  position: relative;
+  overflow: hidden;
+}
+
+.cabinet::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0) 50%
+  );
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.cabinet:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.cabinet-surface {
+  position: relative;
+  padding: var(--space-16);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}

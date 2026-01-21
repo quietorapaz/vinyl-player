@@ -1,0 +1,38 @@
+.vinyl-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6);
+  animation: slideUp var(--duration-slow) var(--ease-out);
+  animation-delay: 100ms;
+  animation-fill-mode: backwards;
+}
+
+.time {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-footnote);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+  min-width: 80px;
+  text-align: center;
+}
+
+.hint {
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-tertiary);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  animation: slideUp var(--duration-slow) var(--ease-out);
+  animation-delay: 200ms;
+  animation-fill-mode: backwards;
+}
